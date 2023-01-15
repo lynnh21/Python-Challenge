@@ -46,8 +46,9 @@ with open(output_path, 'w') as txt:
     txt.write(f"-------------------------- \n")
     txt.write(f"Total Votes : {total_vote} \n")
     txt.write(f"-------------------------- \n")
-    txt.write(
-        f"{c}: {round(candidate_vote_dict[c]*100/total_vote,2)}% ({candidate_vote_dict[c]})\n")
+    for c in candidate_vote_dict:
+        txt.write(
+            f"{c}: {round(candidate_vote_dict[c]*100/total_vote,2)}% ({candidate_vote_dict[c]})\n")
     txt.write(f"-------------------------- \n")
     txt.write(f"Winner: {winner}")
 
